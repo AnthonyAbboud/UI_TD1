@@ -1,20 +1,112 @@
-.grid-container{
-	display: inline-grid;
-	grid-template-columns: 216px 72px 72px 72px 72px 72px 72px 72px 72px 72px;
-	grid-template-rows: 150px 45px 56px 45px 45px 45px 45px 45px;
-	grid-gap: 0px 0px;
+/* Equipe TD 1 ROchana et Beryl  */
+
+
+
+/* Fichier css qui permet une belle présentation de la page web */
+
+h1 {
+  color: blue;
+  font-family: Calibri ;
+  text-align: center;
 }
 
-.grid-item{
-	vertical-align: middle;
-	border: 1px solid #D3D9DD;
+body {
+  background-color: rgb(247, 232, 234);
 }
 
-#vote-table{
-	background-color: #FCECE8;
+
+/* div > img : Définition des images dans les cases de la grille */
+
+
+div > img {
+  height: auto;
+  width: auto;
+  max-height:100%;
+  max-width:100%;
+  text-align : center ;
 }
 
-img {
-	max-height: 100%;
-	max-width: 100%;
+
+/* grid container : Définition de la grille : 10 colonnes de
+largeur auto  */
+
+.grid-container {
+  display:inline-grid;
+  font-family : Calibri ;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto ;
+  grid-gap: 0px 0px;
+  background-color:black;
+  padding: 1px;
+}
+
+.grid-item-white {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.grid-item-pink {
+  background-color: rgb(250, 189, 189);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.grid-item-blue {
+  background-color: #90C7E8;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 10px;
+
+}
+
+
+
+
+/*
+ grid container > div : Définition de chaque case de la grille  */
+
+/* .grid-container > div {
+background-color: rgb(236, 167, 231);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+} */
+
+
+
+.participant1 {
+  display:grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto ;
+  grid-gap: 1px;
+  background-color: black;
+  padding: 1px;
+
+}
+
+.participant1 >div {
+  background-color:#90C7E8;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.participant2 {
+  display:grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto ;
+  grid-gap: 1px;
+  background-color: black;
+  padding: 1px;
+}
+
+.participant2 >div {
+  background-color: #FCECE8;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
 }
