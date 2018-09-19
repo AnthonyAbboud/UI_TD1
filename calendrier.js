@@ -1,13 +1,100 @@
+/* Data Structures */
 var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 var days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
-window.onload = function() {
+/* Build Div Elements for the Dates */
+function buildDivDates(divDates){
+	divDates = document.createElement('div');
+	divDates.className = 'dates-grid-container';
+
+	for(var i = 0; i < 10; i++){
+		var divDate = document.createElement('div');
+		divDate.className = 'date-item';
+		divDate.id = 'date' + (i);
+
+		divDates.appendChild(divDate);
+	}
+
+	return divDates;
+}
+
+function buildDivParticip(divParticip){
+	divParticip = document.createElement('div');
+	divParticip.className = 'particip-grid-container';
+
+	for(var i = 0; i < 10; i++){
+		var divPart = document.createElement('div');
+		divPart.className = 'particip-item';
+
+		divParticip.appendChild(divPart);
+	}
+
+	return divParticip;
+}
+
+function buildDivNewName(divNewName){
+	divNewName = document.createElement('div');
+	divNewName.className = 'new-name-grid-container';
+
+	for(var i = 0; i < 10; i++){
+		var blueName = document.createElement('div');
+
+		if(i == 0){
+			blueName.className = 'new-name-item';
+		}
+		else{
+			blueName.className = 'new-vote-item';
+		}
+
+		divNewName.appendChild(blueName);
+	}
+
+	return divNewName;
+}
+
+function buildDivNames(divNames){
+	divNames = document.createElement('div');
+	divNames.className = 'names-grid-container';
+
+	for(var i = 0; i < 5; i++){
+		var divName = document.createElement('div');
+		divName.className = 'name-item';
+
+		divNames.appendChild(divName);
+	}
+
+	return divNames;
+}
+
+function buildDivVotes(divVotes){
+	divVotes = document.createElement('div');
+	divVotes.className = 'votes-grid-container';
+
+	for(var i = 0; i < 5; i++){
+		var divOnePersonVotes = document.createElement('div');
+		divOnePersonVotes.className = 'person-votes-container';
+
+		for(var j = 0; j < 9; j++){
+			var oneVote = document.createElement('div');
+			oneVote.className = 'vote-item';
+
+			divOnePersonVotes.appendChild(oneVote);
+		}
+
+		divVotes.appendChild(divOnePersonVotes);
+	}
+
+	return divVotes;
+}
+
+/* Fetch Data from JSON File */
+function fetchData(){
 	fetch('https://raw.githubusercontent.com/AnthonyAbboud/UI_TD1/master/cal-data.json')
 	.then(function(response){
 		return response.json();
 	})
 	.then(function(myJson){
-		var prefixDates = 'dates';
+		var prefixDates = 'date';
 		var arrayDates = new Array();
 		for(var i = 1; i <= myJson.Calendrier.length; i++){
 			arrayDates.push(new Date(myJson.Calendrier[i-1][0]));
@@ -19,16 +106,26 @@ window.onload = function() {
 				arrayDates[i-1].getMinutes() + "0\n" +
 				(arrayDates[i-1].getHours() + (myJson.Calendrier[i-1][1]/60)) + ":00";
 		}
-
-		for(var i = 1; i < 10; i++){
-			//document.getElementById(prefixDates + i).innerHTML = myJson.Calendrier[i-1][0];
-		}
-
-		document.getElementById("participNumber").innerHTML = myJson.Participants.length + " particpants";
-
-		var prefixNoms = 'Nom';
-		for(var i = 1; i < 7; i++){
-			document.getElementById(prefixNoms + i).innerHTML += myJson.Participants[i-1].Nom;
-		}
 	})
-};
+}
+
+/* Main Function */
+$(document).ready(function(){
+	/* HTML Structure Generation */
+	var mainDiv = document.querySelector('.main-grid-container');
+	var divDates = buildDivDates(divDates);
+	var divParticip = buildDivParticip(divParticip);
+	var divNewName = buildDivNewName(divNewName);
+	var divNames = buildDivNames(divNames);
+	var divVotes = buildDivVotes(divVotes);
+
+	/* Append Generated HTML Structure to Main */
+	mainDiv.appendChild(divDates);
+	mainDiv.appendChild(divParticip);
+	mainDiv.appendChild(divNewName);
+	mainDiv.appendChild(divNames);
+	mainDiv.appendChild(divVotes);
+
+	/* Fetch Data from JSON File */
+	fetchData();
+})

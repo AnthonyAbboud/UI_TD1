@@ -2,12 +2,13 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!--Page Title-->
+	
 	<title>Équipe XXX --- TD1</title>
-	<!--CSS File-->
+
 	<link rel="stylesheet" href="calendrier.css">
-	<!--JavaScript File-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="calendrier.js"></script>
 </head>
 <body>
@@ -24,108 +25,8 @@
 		</div>
 
 		<!--Table-->
-		<div class="grid-container">
-			<!--Row 1-->
-			<div class="grid-item"></div>
-			<div class="grid-item" id="dates1"></div>
-			<div class="grid-item" id="dates2"></div>
-			<div class="grid-item" id="dates3"></div>
-			<div class="grid-item" id="dates4"></div>
-			<div class="grid-item" id="dates5"></div>
-			<div class="grid-item" id="dates6"></div>
-			<div class="grid-item" id="dates7"></div>
-			<div class="grid-item" id="dates8"></div>
-			<div class="grid-item" id="dates9"></div>
-
-			<!--Row 2-->
-			<div class="grid-item" id="participNumber"></div>
-			<div class="grid-item"><img src="Images/tick2.png"></div>
-			<div class="grid-item"><img src="Images/tick2.png"></div>
-			<div class="grid-item"><img src="Images/tick2.png"></div>
-			<div class="grid-item"><img src="Images/tick2.png"></div>
-			<div class="grid-item"><img src="Images/tick2.png"></div>
-			<div class="grid-item"><img src="Images/tick2.png"></div>
-			<div class="grid-item"><img src="Images/tick2.png"></div>
-			<div class="grid-item"><img src="Images/tick2.png"></div>
-			<div class="grid-item"><img src="Images/tick2.png"></div>
-
-			<!--Row 3-->
-			<div class="grid-item" id="Nom1">
-				<img src="Images/particip2.png">
-				<a href="#">
-          			<span class="glyphicon glyphicon-pencil"></span>
-        		</a>
-			</div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"></div>
-
-			<!--Row 4-->
-			<div class="grid-item" id="Nom2"><img src="Images/particip2.png"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-
-			<!--Row 5-->
-			<div class="grid-item" id="Nom3"><img src="Images/particip2.png"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"></div>
-
-			<!--Row 6-->
-			<div class="grid-item" id="Nom4"><img src="Images/particip2.png"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-
-			<!--Row 7-->
-			<div class="grid-item" id="Nom5"><img src="Images/particip2.png"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"></div>
-
-			<!--Row 8-->
-			<div class="grid-item" id="Nom6"><img src="Images/particip2.png"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-			<div class="grid-item" id="vote-table"></div>
-			<div class="grid-item" id="vote-table"><img src="Images/tick1.png"></div>
-		</div>
+		<div class="main-grid-container"></div>
+		
 	</main>
 </body>
 </html>

@@ -1,17 +1,84 @@
-.grid-container{
+/* Main Grid */
+.main-grid-container{
 	display: inline-grid;
-	grid-template-columns: 216px 72px 72px 72px 72px 72px 72px 72px 72px 72px;
-	grid-template-rows: 150px 45px 56px 45px 45px 45px 45px 45px;
 	grid-gap: 0px 0px;
 }
 
-.grid-item{
+/* Dates Grid */
+.dates-grid-container{
+	display: inline-grid;
+	grid-template-columns: 216px 72px 72px 72px 72px 72px 72px 72px 72px 72px;
+	grid-template-rows: 150px;
+	grid-gap: 0px 0px;
+}
+
+.date-item{
 	vertical-align: middle;
 	border: 1px solid #D3D9DD;
 }
 
-#vote-table{
+/* Particip Grid */
+.particip-grid-container{
+	display: inline-grid;
+	grid-template-columns: 216px 72px 72px 72px 72px 72px 72px 72px 72px 72px;
+	grid-template-rows: 45px;
+	grid-gap: 0px 0px;
+}
+
+.particip-item{
+	vertical-align: middle;
+	border: 1px solid #D3D9DD;
+}
+
+/* New Name Grid */
+.new-name-grid-container{
+	display: inline-grid;
+	grid-template-columns: 216px 72px 72px 72px 72px 72px 72px 72px 72px 72px;
+	grid-template-rows: 56px;
+	grid-gap: 0px 0px;
+}
+
+.new-name-item{
+	vertical-align: middle;
+	border: 1px solid #D3D9DD;
+}
+
+.new-vote-item{
+	vertical-align: middle;
+	border: 1px solid #D3D9DD;
+}
+
+/* Names Grid */
+.names-grid-container{
+	display: inline-grid;
+	grid-template-columns: 216px;
+	grid-template-rows: 45px 45px 45px 45px 45px;
+	grid-gap: 0px 0px;
+}
+
+.name-item{
+	vertical-align: middle;
+	border: 1px solid #D3D9DD;
+}
+
+/* Votes Grid */
+.votes-grid-container{
+	display: inline-grid;
+	grid-template-columns: 0px 72px 72px 72px 72px 72px 72px 72px 72px 72px;
+	grid-template-rows: 45px 45px 45px 45px 45px;
+	grid-gap: 0px 0px;
 	background-color: #FCECE8;
+}
+
+.person-votes-container{
+	display: inline-grid;
+	grid-template-columns: 0px 72px 72px 72px 72px 72px 72px 72px 72px 72px;
+	grid-gap: 0px 0px;
+}
+
+.vote-item{
+	vertical-align: middle;
+	border: 1px solid #D3D9DD;
 }
 
 img {
