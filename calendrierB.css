@@ -1,0 +1,210 @@
+/* Equipe TD 1 ROchana et Beryl  */
+
+
+
+/* Fichier css qui permet une belle présentation de la page web */
+
+h1 {
+  color: blue;
+  font-family: Calibri ;
+  text-align: center;
+}
+
+body {
+  background-color: rgb(247, 232, 234);
+}
+
+img{
+  max-height:100%;
+  max-width:100%;
+}
+
+
+/* div > img : Définition des images dans les cases de la grille
+              Cette définition est équivalente à celle "img"   */
+
+/* div > img {
+  height: auto;
+  width: auto;
+  max-height:100%;
+  max-width:100%;
+  text-align : center ;
+} */
+
+
+/* grid container : Définition de la grille : 10 colonnes de
+largeur auto  */
+
+.grid-container {
+  display:inline-grid;
+  font-family : Calibri ;
+  grid-template-columns: 216px 72px 72px 72px 72px 72px 72px 72px 72px 72px ; /*largeur de chaque colonne*/
+  grid-template-rows: 150px 45px 56px 45px 45px 45px 45px 45px; /*hauteur de chaque ligne*/
+  grid-gap: 0px 0px;
+  padding: 1px;
+}
+
+/* grid-item-white : Définition d'un item pour les fonds blancs (dates)  */
+.grid-item-white {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgba(0, 0, 0, 0.8); 
+  padding: 0px;
+  margin: 0px;
+  font-size: 100%;
+  font: inherit;
+  text-align: center;
+  vertical-align: baseline;
+}
+
+/* grid-item-pink : Définition d'un item pour les cases vides colorées en rose pâle  */
+
+.grid-item-pink {
+  display:flex;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid #black;
+  /* border-left: 0; */
+  /* border: 0; */
+  background-color: #FCEDE9;
+  flex-grow: 1;
+  justify-content: center;
+  height: 45px;
+  align-items: center;
+  flex-direction: row;
+  box-sizing: border-box;
+  min-width: 56px;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+
+}
+
+/* grid-item-green1 : Définition d'un item pour les cases avec l'image ctick1.png  
+                      A voir s'il pertinent de créer des objets pour chaque type de case...  */
+
+.grid-item-green1{
+	vertical-align: middle;
+  /* border: 1px solid #D3D9DD; */
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+/* grid-item-green : D'après sondage doodle, 
+                    Définition d'un item pour les cases avec l'image tick1.png  */
+.grid-item-green{
+  color: #87C627;
+  width: 24px;
+  height: 24px;
+  /* overflow: hidden; */
+  font-size: 100%;
+  font: inherit;
+  /* text-align: -webkit-match-parent;
+  list-style: none; */
+}
+
+/* grid-item-blue : Définition d'un item pour les cases avec l'image tick1.png  */
+
+.grid-item-blue {
+  min-height: 39px;
+  flex: 1;
+  font-size: 16px;
+  border:none;
+  line-height: normal;
+  font-size: 15px;
+  color: #black;
+  background-color: #90C7E8;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  background-clip: padding-box;
+  border-radius: 0;
+  box-sizing: border-box;
+  font-style: normal;
+  font-family: "Fira Sans","Trebuchet MS","Helvetica Neue","Arial",sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: normal;
+  font-weight: inherit;
+
+
+   /* -webkit-user-modify: read-write-plaintext-only; */
+   /* -webkit-tap-highlight-color: rgba(255,255,255,0); */
+   /* border: none; */
+   /* background-color: transparent; */
+   /* -moz-box-sizing: border-box; */
+   /* -moz-osx-font-smoothing: grayscale; */
+
+}
+
+/* pour la bulle d'information */
+
+#parent #popup {
+  display: none;
+}
+
+#parent:hover #popup {
+display: block;
+width:100px;
+height:100px;
+color:white;
+background:red;
+font-size:10px;
+border-radius: 25px;
+position : absolute;
+z-index: 1; /* pour s'afficher au dessus des éléments en position relative */
+transform: translateX(50%); /*on centre horizontalement */
+transform: translateY(-160px); /*on centre verticalement */
+
+}
+
+/* Fin de la bulle d'information /// aide : (https://codepen.io/raphaelgoetter/pen/KwzerV) */ 
+
+
+
+
+/*
+ grid container > div : Définition de chaque case de la grille  */
+
+/* .grid-container > div {
+background-color: rgb(236, 167, 231);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+} 
+
+
+
+.participant1 {
+  display:grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto ;
+  grid-gap: 1px;
+  background-color: black;
+  padding: 1px;
+
+}
+
+.participant1 >div {
+  background-color:#90C7E8;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.participant2 {
+  display:grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto ;
+  grid-gap: 1px;
+  background-color: black;
+  padding: 1px;
+}
+
+.participant2 >div {
+  background-color: #FCECE8;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+*/

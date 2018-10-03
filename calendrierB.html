@@ -4,24 +4,28 @@
     <head>
         <link rel="stylesheet" href="calendrier.css" />
         
-        <title>Equipe Rochana et Beryl ----- TD1 </title>
+        <title>Equipe Rochana, Anthony et Beryl ----- TD1 </title>
                 
     </head>
         
 <!-- Prochaines étapes : 
- - ajuster les photos dans les cases
- - première colonne : écrire à coté de la photo
- - si une case est vide, lui mettre un fond rose  -->
+ - JavaScript
+ - Fin de la mise en page plus tard
+  -->
 
+  
  
     <body>
+            <!-- let myNewJson = JSON.parse(cal-data.json)
+            console.log(myNewJson.calendrier) -->
+
             <div> 
                 <h1>Equipe Rochana et Beryl ----- TD1 </h1>
                 
                 <!-- Première ligne : les dates  -->
                 <div class="grid-container"> 
                     <div class ="grid-item-white"> </div>  
-                    <div class ="grid-item-white"> AUG <br> <b> 27 </b> <br> MON <br> <br> 10:00 <br>12:00 </div>
+                    <div class ="grid-item-white">AUG <br> <b> 27 </b> <br> MON <br> <br> 10:00 <br>12:00 </div>
                     <div class ="grid-item-white">AUG <br> <b> 27 </b> <br> MON <br> <br> 14:00 <br>16:00 </div>
                     <div class ="grid-item-white">AUG <br> <b> 28 </b> <br> TUE <br> <br> 10:00 <br>12:00 </div> 
                     <div class ="grid-item-white">AUG <br> <b> 28 </b> <br> TUE <br> <br> 14:00 <br>16:00 </div>
@@ -44,16 +48,23 @@
                     <div class ="grid-item-white"> <img src="tick2.png" alt="check"> </div>
                 
                 <!-- Troisième ligne : Michel -->
-                    <div class ="grid-item-blue" style="text-align: left"> <img style="float: left; margin: 0px 15px 15px 0px;" src="particip1.png" alt="participant1"> Michel </div>
-                    <div class ="grid-item-white"> <img src="check.png" alt="check"> </div>
-                    <div class ="grid-item-white"> <img src="check.png" alt="check"> </div>
-                    <div class ="grid-item-white"> <img src="check.png" alt="check"> </div>
-                    <div class ="grid-item-white"> <img src="check.png" alt="check"> </div>
-                    <div class ="grid-item-white"> <img src="check.png" alt="check"> </div>                    
-                    <div class ="grid-item-white"> <img src="check.png" alt="check"> </div>
-                    <div class ="grid-item-white"> <img src="check.png" alt="check"> </div>                    
-                    <div class ="grid-item-white"> <img src="check.png" alt="check"> </div>
-                    <div class ="grid-item-white"> <img src="check.png" alt="check"> </div>          
+                    <div class ="grid-item-blue" style="text-align: left"> 
+                        <img style="float: left; margin: 0px 15px 15px 0px;" src="particip1.png" alt="participant1"> Michel </div>
+
+                    <div class ="grid-item-blue" id="parent"> <img src="check.png" alt="check" id="imgClickAndChange" onclick=changeImage()> 
+                        <div id="popup" infoBulle()>  </div> 
+                    </div>
+                    
+                    <div class ="grid-item-blue" id="parent"> <img src="check.png" alt="check" id="imgClickAndChange2" onclick=changeImage2() > 
+                        <div id="popup"> some text here </div>
+                    </div>
+                    <div class ="grid-item-blue"> <img src="check.png" alt="check" id="imgClickAndChange3" onclick=changeImage3()> </div>
+                    <div class ="grid-item-blue"> <img src="check.png" alt="check" id="imgClickAndChange4" onclick=changeImage4()> </div>
+                    <div class ="grid-item-blue"> <img src="check.png" alt="check" id="imgClickAndChange5" onclick=changeImage5()> </div>                    
+                    <div class ="grid-item-blue"> <img src="check.png" alt="check" id="imgClickAndChange6" onclick=changeImage6()> </div>
+                    <div class ="grid-item-blue"> <img src="check.png" alt="check" id="imgClickAndChange7" onclick=changeImage7()> </div>                    
+                    <div class ="grid-item-blue"> <img src="check.png" alt="check" id="imgClickAndChange8" onclick=changeImage8()> </div>
+                    <div class ="grid-item-blue"> <img src="check.png" alt="check" id="imgClickAndChange9" onclick=changeImage9()> </div>          
         
                     <!-- Quatrième ligne : Mathieu -->
                     <div class ="grid-item-white" > <img style="float: left; margin: 0px 15px 15px 0px;"  src="particip2.png" alt="participant2"> Mathieu</div>
@@ -104,21 +115,27 @@
                     <div class = "grid-item-pink"> </div>
                     
                     <!-- Huitième ligne : Michel -->
-                    <div class ="grid-item-white" ><img style="float: left; margin: 0px 15px 15px 0px;"  src="particip2.png" alt="participant2"> Michel </div>
-                    <div class ="grid-item-white"> <img src="tick1.png" alt="tick"> </div>
+                    <!-- <div class ="grid-item-green1" ><img style="float: left; margin: 0px 15px 15px 0px;"  src="particip2.png" alt="participant2"> Michel </div> -->
+                    <div class ="grid-item-white" ><img style="float: left; margin: 0px 15px 15px 0px;" src="particip2.png" alt="participant2"> Michel </div>
+                    <div class ="grid-item-green1"> <img src="tick1.png" alt="tick"> </div>
                     <div class = "grid-item-pink"> </div>
-                    <div class ="grid-item-white"> <img src="tick1.png" alt="tick"> </div>
+                    <div class ="grid-item-green1"> <img src="tick1.png" alt="tick"> </div>
                     <div class = "grid-item-pink"> </div>
-                    <div class ="grid-item-white"> <img src="tick1.png" alt="tick"> </div>
-                    <div class ="grid-item-white"> <img src="tick1.png" alt="tick"> </div>
-                    <div class ="grid-item-white"> <img src="tick1.png" alt="tick"> </div>
+                    <div class ="grid-item-green1"> <img src="tick1.png" alt="tick"> </div>
+                    <div class ="grid-item-green1"> <img src="tick1.png" alt="tick"> </div>
+                    <div class ="grid-item-green1"> <img src="tick1.png" alt="tick"> </div>
                     <div class = "grid-item-pink"></div>
-                    <div class ="grid-item-white"> <img src="tick1.png" alt="tick"> </div>
+                    <div class ="grid-item-green1"> <img src="tick1.png" alt="tick"> </div>
     
                 </div>
 
 
 
                 </div>
+
+    <script src="calendrier.js"></script>
+    <!-- <script src="cal-data.json"></script> -->
+    <script type="text/json" src="cal-data.json"></script>
+
     </body>
 </html>

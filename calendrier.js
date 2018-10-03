@@ -2,7 +2,7 @@ var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oc
 var days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
 window.onload = function() {
-	fetch('https://raw.githubusercontent.com/AnthonyAbboud/UI_TD1/master/cal-data.json')
+	fetch('/cal-data.json')
 	.then(function(response){
 		return response.json();
 	})
