@@ -34,32 +34,6 @@ transform: translateX(50%); /*on centre horizontalement */
 transform: translateY(-160px); /*on centre verticalement */
 
 }
-
-
-
-/* .participant1 {
-  display:grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto auto auto ;
-  grid-gap: 1px;
-  background-color: black;
-  padding: 1px;
-}
-
-.participant1 >div {
-  background-color:#90C7E8;
-  text-align: center;
-}
-.participant2 {
-  display:grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto auto auto ;
-  grid-gap: 1px;
-  background-color: black;
-  padding: 1px;
-} 
- .participant2 >div {
-  background-color: #FCECE8;
-  text-align: center;
- } */
 div > img 
 {
   max-height: 100%;
@@ -81,6 +55,7 @@ div > img
 }
 .tableau {
   background-color:#90C7E8;
+  height: 45px;
 }
 
 .firstLine1{

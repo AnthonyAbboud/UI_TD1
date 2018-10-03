@@ -12,8 +12,6 @@ function mOut(obj) {
   obj.innerHTML = "blank"
 }
 
-
-
 function clear_value (oInput)
 {
     if (!('value' in oInput))
@@ -21,17 +19,6 @@ function clear_value (oInput)
     if (oInput.value != oInput.placeholder)
         oInput.value = '';
 }
-
-    // var list = document.getElementById("firstLine")
-    // fetch("calendrier.json")
-    // .then(function(response) { return response.json(); })
-    // .then(function(json) {
-    // for(var i = 0; i < json.Calendrier.length; i++) {
-    //     var listItem = document.createElement('li');
-    //     listItem.innerHTML = json.Calendrier[i] ;
-    //     list.appendChild(listItem);
-    //   }
-    // });
 
 /* Afficher Popup */
 var e = document.getElementById("parent");
@@ -76,6 +63,8 @@ fetch('https://raw.githubusercontent.com/AnthonyAbboud/UI_TD1/master/calendrier.
 })
 .then(function(myJson){
     var prefixDates = 'date';
+    var prefixVotes = 'vote';
+    var prefixParticipNom = 'participNom';
     var arrayDates = new Array();
     for(var i = 1; i <= myJson.Calendrier.length; i++){
         arrayDates.push(new Date(myJson.Calendrier[i-1][0]));
@@ -86,8 +75,20 @@ fetch('https://raw.githubusercontent.com/AnthonyAbboud/UI_TD1/master/calendrier.
             arrayDates[i-1].getHours() + ":" +
             arrayDates[i-1].getMinutes() + "0\n" +
             (arrayDates[i-1].getHours() + (myJson.Calendrier[i-1][1]/60)) + ":00";
-        document.getElementById("popup").innerHTML=document.getElementById(prefixDates + i).innerHTML;
+    }
 
+    for (var i = 1; i < myJson.Participants.length; i++) {
+        document.getElementById(prefixParticipNom + (i)).innerHTML = myJson.Participants[i].Nom;
+        for(var j = 1; j <= myJson.Participants[i].Disponibilites.length; j++){
+            if(myJson.Participants[i].Disponibilites[j-1] == 0){
+                document.getElementById(prefixVotes + (i) + (j)).style.backgroundColor = "#FCECE8";
+            }
+            else{
+                var imageTick = document.createElement("img");
+                imageTick.src = "Images/tick1.png";
+                document.getElementById(prefixVotes + (i) + (j)).appendChild(imageTick);
+            }
+        }
     }
 
 
