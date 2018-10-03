@@ -84,7 +84,7 @@ function buildDivVotes(divVotes){
 
 /* Fetch Data from JSON File */
 function fetchData(){
-	fetch('https://raw.githubusercontent.com/AnthonyAbboud/UI_TD1/master/cal-data.json')
+	fetch('https://raw.githubusercontent.com/AnthonyAbboud/UI_TD1/Anthony/cal-data.json')
 	.then(function(response){
 		return response.json();
 	})
@@ -111,12 +111,15 @@ function fetchData(){
 			else{
 				var idName = 'name' + (i+nbParticipants);
 				document.getElementById(idName).innerHTML = myJson.Participants[i].Nom;
-				for(var j = 0; j < myJson.Disponibilités.length; j++){
+				for(var j = 0; j < myJson.Disponibilités.length; j++){	
+					var idVote = 'vote' + (i) + (j);
 					if(myJson.Disponibilités[i] == 0){
-						document.getElementById('vote' + (i) + (j)).innerHTML = 0;
+						document.getElementById(idVote).innerHTML = 0;
+						document.getElementById(idVote).style.backgroundColor = '#FCECE8';
 					}
 					else{
-						document.getElementById('vote' + (i) + (j)).innerHTML = 1;
+						document.getElementById(idVote).innerHTML = 1;
+						document.getElementById(idVote).style.backgroundImage = 'Images/tick1.png';
 					}
 				}
 				nbParticipants += 1;
