@@ -5,21 +5,20 @@
 <h1>Equipe Rochana et Béryl ----- TD1 </h1>
 </head>
 <body>
-<script src="calendrier.js"></script>
 <a href= "https://google.com"></a>
 <ul></ul>
 <div class="grid-container">
         
-        <div class="firstLine1"> </div>
-        <div class="firstLine1"> AUG <br> <b> 27 </b> <br> MON <br> <br>10:00 <br>12:00 </div>
-        <div class="firstLine2">AUG <br> <b> 27 </b> <br> MON <br> <br> 14:00 <br>16:00 </div>
-        <div class="firstLine3">AUG <br> <b> 28 </b> <br> TUE <br> <br> 10:00 <br>12:00 </div> 
-        <div class="firstLine4">AUG <br> <b> 28 </b> <br> TUE <br> <br> 14:00 <br>16:00 </div>
-        <div class="firstLine5">AUG <br> <b> 29 </b> <br> WED <br> <br> 8:00 <br>10:00 </div>
-        <div class="firstLine6">AUG <br> <b> 29 </b> <br> WED <br> <br> 14:00 <br>16:00 </div>
-        <div class="firstLine7">AUG <br> <b> 30 </b> <br> THU <br> <br> 10:00 <br>12:00 </div>
-        <div class="firstLine8">AUG <br> <b> 31 </b> <br> FRI <br> <br> 10:00 <br>12:00 </div>
-        <div class="firstLine9">AUG <br> <b> 31 </b> <br> FRI <br> <br> 14:00 <br>16:00 </div>   
+        <div class="firstLine1" id="blank-space"></div>
+        <div class="firstLine2" id="date1"></div>
+        <div class="firstLine3" id="date2"></div>
+        <div class="firstLine4" id="date3"></div> 
+        <div class="firstLine5" id="date4"></div>
+        <div class="firstLine6" id="date5"></div>
+        <div class="firstLine7" id="date6"></div>
+        <div class="firstLine8" id="date7"></div>
+        <div class="firstLine9" id="date8"></div>
+        <div class="firstLine10" id="date9"></div>   
       
         
         
@@ -44,8 +43,8 @@
                 <input type="text" id="myText" name="usrnm" value="Enter your name"onfocus="clear_value(this);"  /> 
         </div>
         
-        <div class="thirdLine2"> <img src= "check.png" alt="check">   <input type="checkbox" id="myCheck" onclick="myFunction()"></div>
-        <div class="thirdLine3"> <img src= "check.png" alt="check"> </div>
+        <div class="thirdLine2" id="parent"> <img src= "check.png" alt="check" id="imgClickAndChange" onclick=changeImage()><div id="popup"></div></div>
+        <div class="thirdLine3"> <img src= "check.png" alt="check">  </div>
         <div class="thirdLine4"> <img src= "check.png" alt="check"> </div>
         <div class="thirdLine5"> <img src= "check.png" alt="check"> </div>
         <div class="thirdLine6"> <img src= "check.png" alt="check"> </div>
@@ -109,5 +108,8 @@
         <div class="tableau"></div>
         <div class="tableau"> <img src= "tick1.png" alt="tick"> </div>
 </div>
+
+
+<script src="calendrier.js"></script>
 </body>
 </html>
