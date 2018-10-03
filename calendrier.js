@@ -40,7 +40,7 @@ function buildDivNewName(divNewName){
 		var blueName = document.createElement('div');
 
 		if(i == 0){
-			blueName.className = 'new-name-item';
+			blueName.id = 'new-name-item';
 		}
 		else{
 			blueName.className = 'new-vote-item';
@@ -66,9 +66,11 @@ function buildDivVotes(divVotes){
 
 			if(j == 0) {
 				oneVote.className = 'person-name';
+				oneVote.id = 'name' + (i+1);
 			}
 			else {
 				oneVote.className = 'vote-item';
+				oneVote.id = 'vote' + (i) + (j);
 			}
 
 			divPersonVotes.appendChild(oneVote);
@@ -98,6 +100,27 @@ function fetchData(){
 				arrayDates[i-1].getHours() + ":" +
 				arrayDates[i-1].getMinutes() + "0\n" +
 				(arrayDates[i-1].getHours() + (myJson.Calendrier[i-1][1]/60)) + ":00";
+		}
+
+		for(var i = 0; i < myJson.Participants.length; i++){
+			var nbParticipants = 0;
+			if(myJson.Participants[i].Statut == "EnCours"){
+				document.getElementById('new-name-item').innerHTML = myJson.Participants[i].Nom;
+				nbParticipants += 1;
+			}
+			else{
+				var idName = 'name' + (i+nbParticipants);
+				document.getElementById(idName).innerHTML = myJson.Participants[i].Nom;
+				for(var j = 0; j < myJson.Disponibilités.length; j++){
+					if(myJson.Disponibilités[i] == 0){
+						document.getElementById('vote' + (i) + (j)).innerHTML = 0;
+					}
+					else{
+						document.getElementById('vote' + (i) + (j)).innerHTML = 1;
+					}
+				}
+				nbParticipants += 1;
+			}
 		}
 	})
 }

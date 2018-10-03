@@ -16,32 +16,32 @@
 	{
 	    "Nom" : "Michel",
 	    "Statut" : "EnCours",
-	    "Disponibilités" : [0,0,0,0,0,0,0,0,0]
+	    "DisponibilitÃ©s" : [0,0,0,0,0,0,0,0,0]
 	},
 	{
 	    "Nom" : "Mathieu",
-	    "Statut" : "Complété",
-	    "Disponibilités" : [1,1,1,1,1,1,0,0,1]
+	    "Statut" : "ComplÃ©tÃ©",
+	    "DisponibilitÃ©s" : [1,1,1,1,1,1,0,0,1]
 	},
 	{
 	    "Nom" : "Kasra",
-	    "Statut" : "Complété",
-	    "Disponibilités" : [0,0,0,0,1,1,1,0,0]
+	    "Statut" : "ComplÃ©tÃ©",
+	    "DisponibilitÃ©s" : [0,0,0,0,1,1,1,0,0]
 	},
 	{
 	    "Nom" : "Audrey",
-	    "Statut" : "Complété",
-	    "Disponibilités" : [0,1,1,1,0,0,1,1,1]
+	    "Statut" : "ComplÃ©tÃ©",
+	    "DisponibilitÃ©s" : [0,1,1,1,0,0,1,1,1]
 	},
 	{
 	    "Nom" : "Antoine",
-	    "Statut" : "Complété",
-	    "Disponibilités" : [1,1,1,1,1,1,0,0,0]
+	    "Statut" : "ComplÃ©tÃ©",
+	    "DisponibilitÃ©s" : [1,1,1,1,1,1,0,0,0]
 	},
 	{
 	    "Nom" : "Michel",
-	    "Statut" : "Complété",
-	    "Disponibilités" : [1,0,1,0,1,1,1,0,1]
+	    "Statut" : "ComplÃ©tÃ©",
+	    "DisponibilitÃ©s" : [1,0,1,0,1,1,1,0,1]
 	}
     ]
 }
