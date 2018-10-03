@@ -1,20 +1,62 @@
-.grid-container{
-	display: inline-grid;
-	grid-template-columns: 216px 72px 72px 72px 72px 72px 72px 72px 72px 72px;
-	grid-template-rows: 150px 45px 56px 45px 45px 45px 45px 45px;
-	grid-gap: 0px 0px;
+
+  
+.grid-container {
+  display:grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto ;
+  grid-gap: 1px;
+  background-color:black;
+  padding: 1px;
+ 
 }
 
-.grid-item{
-	vertical-align: middle;
-	border: 1px solid #D3D9DD;
+.grid-container > div {
+background-color: white;
+  text-align: center;
 }
 
-#vote-table{
-	background-color: #FCECE8;
+
+/* .participant1 {
+  display:grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto ;
+  grid-gap: 1px;
+  background-color: black;
+  padding: 1px;
 }
 
-img {
-	max-height: 100%;
-	max-width: 100%;
+.participant1 >div {
+  background-color:#90C7E8;
+  text-align: center;
+}
+.participant2 {
+  display:grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto ;
+  grid-gap: 1px;
+  background-color: black;
+  padding: 1px;
+} 
+ .participant2 >div {
+  background-color: #FCECE8;
+  text-align: center;
+ } */
+div > img 
+{
+  max-height: 100%;
+  max-width: 100%;
+}
+.firstLine {
+ 
+  grid-column:1/10;
+}
+
+.secondLine {
+  grid-column:2/10;
+}
+.thirdLine {
+  grid-column:3/10;
+}
+.participants {
+  
+}
+.tableau {
+  background-color:#90C7E8;
 }
