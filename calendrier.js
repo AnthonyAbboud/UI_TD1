@@ -52,36 +52,29 @@ function buildDivNewName(divNewName){
 	return divNewName;
 }
 
-function buildDivNames(divNames){
-	divNames = document.createElement('div');
-	divNames.className = 'names-grid-container';
-
-	for(var i = 0; i < 5; i++){
-		var divName = document.createElement('div');
-		divName.className = 'name-item';
-
-		divNames.appendChild(divName);
-	}
-
-	return divNames;
-}
-
 function buildDivVotes(divVotes){
 	divVotes = document.createElement('div');
 	divVotes.className = 'votes-grid-container';
 
 	for(var i = 0; i < 5; i++){
-		var divOnePersonVotes = document.createElement('div');
-		divOnePersonVotes.className = 'person-votes-container';
+		var divPersonVotes = document.createElement('div');
 
-		for(var j = 0; j < 9; j++){
+		divPersonVotes.className = 'person-votes-container';
+
+		for(var j = 0; j < 10; j++){
 			var oneVote = document.createElement('div');
-			oneVote.className = 'vote-item';
 
-			divOnePersonVotes.appendChild(oneVote);
+			if(j == 0) {
+				oneVote.className = 'person-name';
+			}
+			else {
+				oneVote.className = 'vote-item';
+			}
+
+			divPersonVotes.appendChild(oneVote);
 		}
 
-		divVotes.appendChild(divOnePersonVotes);
+		divVotes.appendChild(divPersonVotes);
 	}
 
 	return divVotes;
@@ -116,14 +109,12 @@ $(document).ready(function(){
 	var divDates = buildDivDates(divDates);
 	var divParticip = buildDivParticip(divParticip);
 	var divNewName = buildDivNewName(divNewName);
-	var divNames = buildDivNames(divNames);
 	var divVotes = buildDivVotes(divVotes);
 
 	/* Append Generated HTML Structure to Main */
 	mainDiv.appendChild(divDates);
 	mainDiv.appendChild(divParticip);
 	mainDiv.appendChild(divNewName);
-	mainDiv.appendChild(divNames);
 	mainDiv.appendChild(divVotes);
 
 	/* Fetch Data from JSON File */

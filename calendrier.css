@@ -1,84 +1,111 @@
 /* Main Grid */
-.main-grid-container{
+.main-grid-container {
 	display: inline-grid;
 	grid-gap: 0px 0px;
 }
 
 /* Dates Grid */
-.dates-grid-container{
+.dates-grid-container {
 	display: inline-grid;
 	grid-template-columns: 216px 72px 72px 72px 72px 72px 72px 72px 72px 72px;
 	grid-template-rows: 150px;
 	grid-gap: 0px 0px;
 }
 
-.date-item{
+.date-item {
 	vertical-align: middle;
 	border: 1px solid #D3D9DD;
 }
 
 /* Particip Grid */
-.particip-grid-container{
+.particip-grid-container {
 	display: inline-grid;
 	grid-template-columns: 216px 72px 72px 72px 72px 72px 72px 72px 72px 72px;
 	grid-template-rows: 45px;
 	grid-gap: 0px 0px;
 }
 
-.particip-item{
+.particip-item {
 	vertical-align: middle;
 	border: 1px solid #D3D9DD;
 }
 
 /* New Name Grid */
-.new-name-grid-container{
+.new-name-grid-container {
 	display: inline-grid;
 	grid-template-columns: 216px 72px 72px 72px 72px 72px 72px 72px 72px 72px;
 	grid-template-rows: 56px;
 	grid-gap: 0px 0px;
 }
 
-.new-name-item{
+.new-name-item {
 	vertical-align: middle;
 	border: 1px solid #D3D9DD;
 }
 
-.new-vote-item{
+.new-vote-item {
 	vertical-align: middle;
 	border: 1px solid #D3D9DD;
 }
 
 /* Names Grid */
-.names-grid-container{
+.names-grid-container {
 	display: inline-grid;
 	grid-template-columns: 216px;
 	grid-template-rows: 45px 45px 45px 45px 45px;
 	grid-gap: 0px 0px;
+	width: 216px;
+	float: left;
 }
 
-.name-item{
+.name-item {
 	vertical-align: middle;
 	border: 1px solid #D3D9DD;
+	grid-template-columns: 216px;
+	grid-template-rows: 45px;
+	width: 216px;
+	height: 45px;
 }
 
 /* Votes Grid */
-.votes-grid-container{
+.votes-grid-container {
 	display: inline-grid;
-	grid-template-columns: 0px 72px 72px 72px 72px 72px 72px 72px 72px 72px;
+	grid-template-columns: 864px;
 	grid-template-rows: 45px 45px 45px 45px 45px;
 	grid-gap: 0px 0px;
-	background-color: #FCECE8;
+	/*background-color: #FCECE8;*/
+	width: 864px;
+	float: right;
 }
 
-.person-votes-container{
+.person-votes-container {
 	display: inline-grid;
-	grid-template-columns: 0px 72px 72px 72px 72px 72px 72px 72px 72px 72px;
+	grid-template-columns: 216px 72px 72px 72px 72px 72px 72px 72px 72px 72px;
+	grid-template-rows: 45px;
 	grid-gap: 0px 0px;
+	width: 864px;
+	height: 45px;
+	float: right;
 }
 
-.vote-item{
+.person-name {
+	display: inline-grid;
 	vertical-align: middle;
 	border: 1px solid #D3D9DD;
+	grid-template-columns: 216px;
+	grid-template-rows: 45px;
+	width: 216px;
+	height: 45px;
+}
+
+.vote-item {
+	display: inline-grid;
+	vertical-align: middle;
+	border: 1px solid #D3D9DD;
+	grid-template-columns: 72px;
+	grid-template-rows: 45px;
+	width: 72px;
+	height: 45px;
 }
 
 img {
