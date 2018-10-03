@@ -70,7 +70,7 @@ function changeImage()  {
 }
 
 
-fetch('https://raw.githubusercontent.com/AnthonyAbboud/UI_TD1/master/cal-data.json')
+fetch('https://raw.githubusercontent.com/AnthonyAbboud/UI_TD1/master/calendrier.json')
 .then(function(response){
     return response.json();
 })
