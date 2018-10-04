@@ -5,11 +5,11 @@ var days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 var img=document.getElementsByClassName("thirdLine1");
 
 function mOver(obj) {
-  obj.innerHTML = img
+  obj.innerHTML = img;
 }
 
 function mOut(obj) {
-  obj.innerHTML = "blank"
+  obj.innerHTML = "blank";
 }
 
 function clear_value (oInput)
@@ -57,7 +57,7 @@ function changeImage()  {
 }
 
 
-fetch('https://raw.githubusercontent.com/AnthonyAbboud/UI_TD1/master/calendrier.json')
+fetch('http://localhost:8080/calendrier.json')
 .then(function(response){
     return response.json();
 })
@@ -77,6 +77,9 @@ fetch('https://raw.githubusercontent.com/AnthonyAbboud/UI_TD1/master/calendrier.
             (arrayDates[i-1].getHours() + (myJson.Calendrier[i-1][1]/60)) + ":00";
     }
 
+    var participParJour = new Array(myJson.Calendrier.length);
+    participParJour.fill(0);
+
     for (var i = 1; i < myJson.Participants.length; i++) {
         document.getElementById(prefixParticipNom + (i)).innerHTML = myJson.Participants[i].Nom;
         for(var j = 1; j <= myJson.Participants[i].Disponibilites.length; j++){
@@ -87,9 +90,24 @@ fetch('https://raw.githubusercontent.com/AnthonyAbboud/UI_TD1/master/calendrier.
                 var imageTick = document.createElement("img");
                 imageTick.src = "Images/tick1.png";
                 document.getElementById(prefixVotes + (i) + (j)).appendChild(imageTick);
+                participParJour[j-1] += 1;
             }
         }
     }
+    
+    var prefixNbParticip = 'nbParticipants';
 
+    for(var i = 1; i <= myJson.Calendrier.length; i++){
+      var num = document.createElement("p");
+      var numText = document.createTextNode(participParJour[i-1]);
+      num.appendChild(numText);
+      document.getElementById(prefixNbParticip + (i)).appendChild(num);
+    }
+
+    var nbParticip = 0;
+    for (var i = 0; i < myJson.Participants.length; i++) {
+      if(myJson.Participants[i].Statut == "Complete"){ nbParticip += 1; }
+    }
+    document.getElementById("nbTotalParticipants").innerHTML = nbParticip + " participants";
 
 })

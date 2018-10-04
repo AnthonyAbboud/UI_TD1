@@ -12,6 +12,7 @@
 .grid-container > div {
 background-color: white;
   text-align: center;
+  height: 50px;
 }
 
 /* pour la bulle d'information */
@@ -38,9 +39,11 @@ div > img
 {
   max-height: 100%;
   max-width: 100%;
+  width: 20px;
+  height: 20px;
 }
+
 .firstLine {
- 
   grid-column:1/10;
 }
 
@@ -60,4 +63,8 @@ div > img
 
 .firstLine1{
   height: 40px;
+}
+
+p {
+  margin: 0px; 
 }
