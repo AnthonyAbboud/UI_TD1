@@ -42,7 +42,7 @@ function focusFunction() {
 }
 
 /* Changer l'image */
-
+/*
 let img2 = document.getElementById('imgClickAndChange');
 img2.addEventListener('click', changeImage());
 
@@ -54,8 +54,26 @@ function changeImage()  {
      document.getElementById("imgClickAndChange").src = "check.png";
    }
    img2.classList.toggle('checked')
+}*/
+
+function imageChanging(checkBox){
+    if(checkBox.classList.contains('checked')){
+        checkBox.src = "tick-check.png";    
+    }
+    else{
+        checkBox.src = "check.png";
+    }
+    checkBox.classList.toggle('checked');
+
 }
 
+document.getElementsByName("blueCheckbox").forEach(function(element){
+    if(element.addEventListener){
+        element.addEventListener("change", imageChanging, false);
+    } else if(element.attachEvent){
+        element.attachEvent("onchange", letter);
+    }
+});
 
 fetch('http://localhost:8080/calendrier.json')
 .then(function(response){
