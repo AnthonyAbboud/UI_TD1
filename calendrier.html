@@ -6,13 +6,10 @@
 <h1>Equipe Rochana, Béryl et Anthony ----- TD1 </h1>
 </head>
 <body>
-        <nav id="menuVue">
-                <ul>
-                        <il>Table</il>
-                        <il>Calendar</il>
-                </ul>
-        </nav>
-<div class="grid-container">
+        <div>
+        <button onclick=generateTable()>Table</button><button onclick=generateCalendar()>Calendar</button>
+        </div>
+<div id="grid-container">
         
         <div class="firstLine1 firstColumn" id="blank-space"></div>
         <div class="firstLine2 dateColumn" id="date1"></div>
@@ -114,7 +111,7 @@
         <div class="tableau vote" id="vote59"></div>
 </div>
 
-
+<div id="calendrier"></div>
 <script src="calendrier.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 
   
-.grid-container {
+#grid-container {
   display: inline-grid;
   grid-template-columns: 216px 72px 72px 72px 72px 72px 72px 72px 72px 72px;
   grid-template-rows: 150px 47px 57px 45px 45px 45px 45px 45px;
@@ -10,7 +10,7 @@
  
 }
 
-.grid-container > div {
+#grid-container > div {
 background-color: white;
   text-align: center;
   border: 1px solid #d4dade;

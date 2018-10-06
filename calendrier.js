@@ -41,27 +41,12 @@ function focusFunction() {
     }
 }
 
-/* Changer l'image */
-/*
-let img2 = document.getElementById('imgClickAndChange');
-img2.addEventListener('click', changeImage());
-
-function changeImage()  {
-   if(img2.classList.contains('checked')){
-     document.getElementById("imgClickAndChange").src = "tick-check.png";
-   }
-   else{
-     document.getElementById("imgClickAndChange").src = "check.png";
-   }
-   img2.classList.toggle('checked')
-}*/
-
 function imageChanging(checkBox){
     if(checkBox.classList.contains('checked')){
-        checkBox.src = "tick-check.png";    
+        checkBox.src = "check.png";    
     }
     else{
-        checkBox.src = "check.png";
+        checkBox.src = "tick-check.png";
     }
     checkBox.classList.toggle('checked');
 
@@ -129,3 +114,11 @@ fetch('http://localhost:8080/calendrier.json')
     document.getElementById("nbTotalParticipants").innerHTML = nbParticip + " participants";
 
 })
+
+function generateCalendar() { 
+    document.getElementById("grid-container").style.display = "block";
+}
+
+function generateTable() {
+    document.getElementById("grid-container").style.display = "inline-grid";
+}
