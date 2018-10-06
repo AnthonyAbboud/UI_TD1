@@ -1,18 +1,19 @@
 
   
 .grid-container {
-  display:grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto auto auto ;
-  grid-gap: 1px;
-  background-color:black;
+  display: inline-grid;
+  grid-template-columns: 216px 72px 72px 72px 72px 72px 72px 72px 72px 72px;
+  grid-template-rows: 150px 47px 57px 45px 45px 45px 45px 45px;
+  grid-gap: 0px 0px;
   padding: 1px;
+  margin: 0;
  
 }
 
 .grid-container > div {
 background-color: white;
   text-align: center;
-  height: 50px;
+  border: 1px solid #d4dade;
 }
 
 /* pour la bulle d'information */
@@ -39,32 +40,27 @@ div > img
 {
   max-height: 100%;
   max-width: 100%;
-  width: 20px;
-  height: 20px;
+  width: 100%;
+  height: 100%;
 }
 
-.firstLine {
-  grid-column:1/10;
-}
-
-.secondLine {
-  grid-column:2/10;
-}
-.thirdLine {
-  grid-column:3/10;
-}
-.participants {
-  
-}
 .tableau {
   background-color:#90C7E8;
-  height: 45px;
-}
-
-.firstLine1{
-  height: 40px;
 }
 
 p {
   margin: 0px; 
+}
+
+.nbParticipants > img, #bouton, #participIcon {
+  width: 20px;
+  height: 20px;
+}
+
+#myText {
+  border-radius: 4px;
+}
+
+#menuVue > ul > il {
+  padding-left: 10px;
 }
