@@ -37,11 +37,6 @@
 
        
         <div class="thirdLine1 firstColumn"> 
-                <div  id="bouton"  onmouseover="mOver(this)" onmouseout="mOut(this)" > 
-                        <img src="pen.png" width="20";height="20">
-                 </div>
-                <img src= "particip1.png" id="participIcon" alt="participant1">
-                
                 <input type="text" id="myText" name="usrnm" value="Enter your name"onfocus="clear_value(this);"  /> 
         </div>
         
@@ -54,8 +49,12 @@
         <div class="thirdLine8 blueVote"> <img src= "check.png" name="blueCheckbox" id="check7" onclick=imageChanging(this) alt="check"> </div>
         <div class="thirdLine9 blueVote"> <img src= "check.png" name="blueCheckbox" id="check8" onclick=imageChanging(this) alt="check"> </div>
         <div class="thirdLine10 blueVote"> <img src= "check.png" name="blueCheckbox" id="check9" onclick=imageChanging(this) alt="check"> </div>
-
-        <div class="participants firstColumn" id="participNom1"></div>
+        <div class="P1" id="changeP1" name="editName">
+                <img src= "particip2.png" id="participant2" style="width:20px;height:20px;" >
+                <span class="participants firstColumn" id="participNom1"></span>
+               <img src="pen.png" id="editButton" style="width:0px;height:0px;" class="clicked" onclick=edit()  >
+               <span  id="changeName"  style="visibility:hidden"><input type="text" id="name" value="Mathieu" onkeydown=updating()></span>
+        </div>
         <div class="tableau vote" id="vote11"></div>
         <div class="tableau vote" id="vote12"></div>
         <div class="tableau vote" id="vote13"></div>
@@ -66,7 +65,13 @@
         <div class="tableau vote" id="vote18"></div>
         <div class="tableau vote" id="vote19"></div>
 
-        <div class="participants firstColumn" id="participNom2"></div>
+        
+        <div class="P2" id="changeP1" name="editName">
+                        <img src= "particip2.png" id="participant2" style="width:20px;height:20px;" >
+                        <span class="participants firstColumn" id="participNom2"></span>
+                       <img src="pen.png" id="editButton" style="width:0px;height:0px;" class="clicked" onclick=edit() >
+                       <span  id="changeName"  style="visibility:hidden"><input type="text" id="name" value="Mathieu" onkeydown=updating()></span>
+                </div>
         <div class="tableau vote" id="vote21"></div>
         <div class="tableau vote" id="vote22"></div>
         <div class="tableau vote" id="vote23"></div>
@@ -77,7 +82,13 @@
         <div class="tableau vote" id="vote28"></div>
         <div class="tableau vote" id="vote29"></div> 
 
-        <div class="participants firstColumn" id="participNom3"></div>
+        
+        <div class="P3" id="changeP1" name="editName">
+                        <img src= "particip2.png" id="participant2" style="width:20px;height:20px;" >
+                        <span class="participants firstColumn" id="participNom3"></span>
+                       <img src="pen.png" id="editButton" style="width:0px;height:0px;" class="clicked" onclick=edit() >
+                       <span  id="changeName"  style="visibility:hidden"><input type="text" id="name" value="Mathieu" onkeydown=updating()></span>
+                </div>
         <div class="tableau vote" id="vote31"></div>
         <div class="tableau vote" id="vote32"></div>
         <div class="tableau vote" id="vote33"></div>
@@ -88,7 +99,13 @@
         <div class="tableau vote" id="vote38"></div>
         <div class="tableau vote" id="vote39"></div>
         
-        <div class="participants firstColumn" id="participNom4"></div>
+        
+        <div class="P4" id="changeP1" name="editName">
+                        <img src= "particip2.png" id="participant2" style="width:20px;height:20px;" >
+                        <span class="participants firstColumn" id="participNom4"></span>
+                       <img src="pen.png" id="editButton" style="width:0px;height:0px;" class="clicked" onclick=edit() >
+                       <span  id="changeName"  style="visibility:hidden"><input type="text" id="name" value="Mathieu" onkeydown=updating()></span>
+                </div>
         <div class="tableau vote" id="vote41"></div>
         <div class="tableau vote" id="vote42"></div>
         <div class="tableau vote" id="vote43"></div>
@@ -99,7 +116,12 @@
         <div class="tableau vote" id="vote48"></div>
         <div class="tableau vote" id="vote49"></div> 
 
-        <div class="participants firstColumn" id="participNom5"></div>
+        <div class="P5" id="changeP1" name="editName">
+                        <img src= "particip2.png" id="participant2" style="width:20px;height:20px;" >
+                        <span class="participants firstColumn" id="participNom5"></span>
+                        <img src="pen.png" id="editButton" style="width:0px;height:0px;" class="clicked" onclick=edit() >
+                       <span  id="changeName"  style="visibility:hidden"><input type="text" id="name" value="Mathieu" onkeydown=updating()></span>
+                </div>
         <div class="tableau vote" id="vote51"></div>
         <div class="tableau vote" id="vote52"></div>
         <div class="tableau vote" id="vote53"></div>
@@ -110,7 +132,10 @@
         <div class="tableau vote" id="vote58"></div>
         <div class="tableau vote" id="vote59"></div>
 </div>
-
+<div id="boutons">
+        <div id="cancel"style="visibility:hidden"><button type="cancel" value="Cancel" onclick=cancel()>Cancel</button></div>
+        <div id="update"style="visibility:hidden"><button type="update" value="Update" onclick=update()>Update</button></div>
+        </div>
 <div id="calendrier"></div>
 <script src="calendrier.js"></script>
 </body>

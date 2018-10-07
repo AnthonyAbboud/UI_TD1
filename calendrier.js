@@ -40,6 +40,14 @@ function focusFunction() {
         self.close();
     }
 }
+var object=document.getElementById("changeP1");
+
+object.onmouseover=function(){
+    document.getElementById("editButton").style="width:20px;height:20px;";
+}
+object.onmouseout=function(){
+    document.getElementById("editButton").style="width:0px;height:0px;";
+}
 
 function imageChanging(checkBox){
     if(checkBox.classList.contains('checked')){
@@ -52,6 +60,55 @@ function imageChanging(checkBox){
 
 }
 
+/* Changer le texte */
+let editText=document.getElementById("changeName");
+editText.addEventListener("click",edit());
+
+
+function edit(){
+    
+    if(editText.classList.contains('clicked')){
+        document.getElementById("changeName").style.visibility="visible";
+        document.getElementById("participant2").style.visibility="hidden";
+        document.getElementById("participNom1").style.visibility="hidden";
+        document.getElementById("cancel").style.visibility="visible";
+        document.getElementById("editButton").style="visibility:hidden"; //NE MARCHE PAS ICI
+      }
+      editText.classList.toggle('clicked')
+    
+}
+function updating () {
+    document.getElementById("update").style.visibility="visible";
+    document.getElementById("cancel").style.visibility="hidden";
+}
+
+
+let changing=document.getElementById("changeP1");
+changing.addEventListener("click",cancel());
+
+function cancel() {
+    if(changing.classList.contains('P1')){
+        document.getElementById("changeName").style.visibility="hidden";
+        document.getElementById("participant2").style.visibility="visible";
+        document.getElementById("participNom1").style.visibility="visible";
+        document.getElementById("cancel").style.visibility="hidden";
+        document.getElementById("editButton").style.visibility="visible";
+    }
+        
+}
+changing.addEventListener("click",update());
+function update() {
+    if(changing.classList.contains('P1')){
+        document.getElementById("changeName").style.visibility="hidden";
+        document.getElementById("participNom1").innerHTML= document.getElementById("name").value;
+        document.getElementById("participant2").style.visibility="visible";
+        document.getElementById("participNom1").style.visibility="visible";
+        document.getElementById("update").style.visibility="hidden";
+        document.getElementById("editButton").style.visibility="visible";
+    }
+        
+}
+
 document.getElementsByName("blueCheckbox").forEach(function(element){
     if(element.addEventListener){
         element.addEventListener("change", imageChanging, false);
@@ -60,7 +117,11 @@ document.getElementsByName("blueCheckbox").forEach(function(element){
     }
 });
 
-fetch('http://localhost:8080/calendrier.json')
+
+
+
+
+fetch('https://raw.githubusercontent.com/AnthonyAbboud/UI_TD1/master/calendrier.json')
 .then(function(response){
     return response.json();
 })
