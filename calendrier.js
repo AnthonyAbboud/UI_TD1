@@ -11,14 +11,36 @@ function clear_value (oInput)
 }
 
 /* Afficher Popup */
-var e = document.getElementById("parent");
+// var e = document.getElementById("parent");
 
-e.onmouseover = function() {
-  document.getElementById('popup').style.display = 'block';
+// e.onmouseover = function() {
+//   document.getElementById('popup').style.display = 'block';
+// }
+
+// e.onmouseout = function() {
+//   document.getElementById('popup').style.display = 'none';
+// }
+
+function pop(info) {
+    var prefixPop="popup"
+    var prefixCell="parent"
+    for (var i=1;i<10;i++) {
+        if (document.getElementById(prefixCell+i)==info) {
+        document.getElementById(prefixPop+i).style.display="block";
+        }
+            
+    }
 }
 
-e.onmouseout = function() {
-  document.getElementById('popup').style.display = 'none';
+function unpop(info) {
+    var prefixPop="popup"
+    var prefixCell="check"
+    for (var i=1;i<10;i++) {
+        if (document.getElementById(prefixCell+i)==info) {
+            document.getElementById(prefixPop+i).style.display="none";
+        }
+            
+    }
 }
 
 /* Fonction pour que les popup soient toujours au premier plan */

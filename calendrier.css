@@ -18,11 +18,11 @@ background-color: white;
 
 /* pour la bulle d'information */
 
-#parent #popup {
+#parent1 #popup1 #parent2 #popup2 #parent3 #popup3 #parent4 #popup4 #parent5 #popup5 #parent6 #popup6 #parent7 #popup7 #parent8 #popup8 #parent9 #popup9{
   display: none;
 }
 
-#parent:hover #popup {
+#parent1:hover #popup1, #parent2:hover #popup2 , #parent3:hover #popup3 , #parent4:hover #popup4 , #parent5:hover #popup5 , #parent6:hover #popup6 , #parent7:hover #popup7 , #parent8:hover #popup8 , #parent9:hover #popup9  {
 display: block;
 width:100px;
 height:100px;
@@ -36,6 +36,7 @@ transform: translateX(50%); /*on centre horizontalement */
 transform: translateY(-160px); /*on centre verticalement */
 
 }
+
 div > img 
 {
   max-height: 100%;
@@ -56,43 +57,12 @@ p {
 #myText {
   border-radius: 4px;
 }
-#participant1 {
+#participant1,#participant2,#participant3,#participant4,#participant5 {
   width: 20px;
   height: 20px;
 }
-#participant2 {
-  width: 20px;
-  height: 20px;
-}
-#participant3 {
-  width: 20px;
-  height: 20px;
-}
-#participant4 {
-  width: 20px;
-  height: 20px;
-}
-#participant5 {
-  width: 20px;
-  height: 20px;
-}
-#editButton1 {
-  width: 20px;
-  height: 20px;
-}
-#editButton2 {
-  width: 20px;
-  height: 20px;
-}
-#editButton3 {
-  width: 20px;
-  height: 20px;
-}
-#editButton4 {
-  width: 20px;
-  height: 20px;
-}
-#editButton5 {
+
+#editButton1,#editButton2,#editButton3,#editButton4,#editButton5 {
   width: 20px;
   height: 20px;
 }
