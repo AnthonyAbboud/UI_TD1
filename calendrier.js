@@ -35,7 +35,7 @@ function appear (index) {
     var prefixButton="editButton"
     for (var i=1;i<6;i++) {
             if (document.getElementById(prefixParticipant + i)==index) {
-                document.getElementById(prefixButton + i).style="width:20px;height:20px;";
+                document.getElementById(prefixButton + i).style="visibility: visible;";
             }
     }
 }
@@ -45,7 +45,7 @@ function hide (index) {
     var prefixButton="editButton"
     for (var i=1;i<6;i++) {
             if (document.getElementById(prefixParticipant + i)==index) {
-                document.getElementById(prefixButton + i).style="width:0px;height:0px;";
+                document.getElementById(prefixButton + i).style="visibility: hidden;";
             }
     }
 }
@@ -63,50 +63,73 @@ function imageChanging(checkBox){
 }
 
 /* Changer le texte */
-let editText=document.getElementById("changeName");
-editText.addEventListener("click",edit());
 
-
-function edit(){
+function edit(input){
+    var prefixNom="changeName"
+    var prefiximg="participant"
+    var prefixParticipant="participNom"
+    var prefixButton="editButton"
+    var prefixName ="name"
+    for (var i=1;i<6;i++) {
+    if(document.getElementById(prefixNom+ i).classList.contains('clicked')){
+      
     
-    if(editText.classList.contains('clicked')){
-        document.getElementById("changeName").style.visibility="visible";
-        document.getElementById("participant2").style.visibility="hidden";
-        document.getElementById("participNom1").style.visibility="hidden";
+            if (document.getElementById(prefixButton + i)==input) {
+        document.getElementById(prefixName+ i).style.visibility="visible";
+        document.getElementById(prefixNom+ i).style.visibility="visible";
+        document.getElementById(prefiximg + i).style.visibility="hidden";
+        document.getElementById(prefixParticipant+ i).style.visibility="hidden";
         document.getElementById("cancel").style.visibility="visible";
-        document.getElementById("editButton1").style="visibility:hidden"; //NE MARCHE PAS ICI
+        document.getElementById(prefixButton+ i).style="width:0px;height:0px"; //NOT WORKING
+        }
       }
-      editText.classList.toggle('clicked') 
+      document.getElementById(prefixNom+ i).classList.toggle('clicked') 
 }
+}
+
 function updating () {
     document.getElementById("update").style.visibility="visible";
     document.getElementById("cancel").style.visibility="hidden";
 }
 
 
-let changing=document.getElementById("changeP1");
-changing.addEventListener("click",cancel());
 
 function cancel() {
-    if(changing.classList.contains('P1')){
-        document.getElementById("changeName").style.visibility="hidden";
-        document.getElementById("participant2").style.visibility="visible";
-        document.getElementById("participNom1").style.visibility="visible";
+    var prefixNom="changeName"
+    var prefiximg="participant"
+    var prefixParticipNom="participNom"
+    var prefixParticipant="changeP"
+    var prefix ="P"
+    var prefixName ="name"
+    for (var i=1;i<6;i++) {
+    if(document.getElementById(prefixParticipant+ i).classList.contains(prefix+ i)){
+        document.getElementById(prefixNom+ i).style.visibility="hidden";
+        document.getElementById(prefiximg+i).style="visibilty:visible;";
+        document.getElementById(prefixParticipNom+ i).style.visibility="visible";
         document.getElementById("cancel").style.visibility="hidden";
-        document.getElementById("editButton1").style.visibility="visible";
+        document.getElementById(prefixName+i).style.visibility="hidden";
+
+        }
     }
         
 }
-changing.addEventListener("click",update());
 function update() {
-    if(changing.classList.contains('P1')){
-        document.getElementById("changeName").style.visibility="hidden";
-        document.getElementById("participNom1").innerHTML= document.getElementById("name").value;
-        document.getElementById("participant2").style.visibility="visible";
-        document.getElementById("participNom1").style.visibility="visible";
+    var prefiximg="participant"
+    var prefixParticipNom="participNom"
+    var prefixParticipant="changeP"
+    var prefix ="P"
+    var prefixName ="name"
+    for (var i=1;i<6;i++) {
+    //if (document.getElementById(prefixNom+i).style.visibility=="visible") {
+    if(document.getElementById(prefixParticipant+ i).classList.contains(prefix+ i)){   
+        document.getElementById(prefixParticipNom+i).innerHTML= document.getElementById(prefixName+i).value;        
+        document.getElementById(prefiximg+i).style.visibility="visible";
         document.getElementById("update").style.visibility="hidden";
-        document.getElementById("editButton1").style.visibility="visible";
+        document.getElementById(prefixParticipNom+i).style.visibility="visible";
+        document.getElementById(prefixName+i).style.visibility="hidden";
     }
+   // }
+}
         
 }
 
@@ -118,22 +141,6 @@ document.getElementsByName("blueCheckbox").forEach(function(element){
     }
 });
 
-
-// document.getElementsByName("hover").forEach(function(element){
-//     if(element.addEventListener){
-//         element.addEventListener("appear", appear, false);
-//     } else if(element.attachEvent){
-//         element.attachEvent("onappear", pencil);
-//     }
-// });
-
-// document.getElementsByName("hover").forEach(function(element){
-//     if(element.addEventListener){
-//         element.addEventListener("hide", hide, false);
-//     } else if(element.attachEvent){
-//         element.attachEvent("onappear", pencil);
-//     }
-// });
 
 fetch('https://raw.githubusercontent.com/AnthonyAbboud/UI_TD1/master/calendrier.json')
 .then(function(response){

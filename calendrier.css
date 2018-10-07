@@ -56,6 +56,47 @@ p {
 #myText {
   border-radius: 4px;
 }
+#participant1 {
+  width: 20px;
+  height: 20px;
+}
+#participant2 {
+  width: 20px;
+  height: 20px;
+}
+#participant3 {
+  width: 20px;
+  height: 20px;
+}
+#participant4 {
+  width: 20px;
+  height: 20px;
+}
+#participant5 {
+  width: 20px;
+  height: 20px;
+}
+#editButton1 {
+  width: 20px;
+  height: 20px;
+}
+#editButton2 {
+  width: 20px;
+  height: 20px;
+}
+#editButton3 {
+  width: 20px;
+  height: 20px;
+}
+#editButton4 {
+  width: 20px;
+  height: 20px;
+}
+#editButton5 {
+  width: 20px;
+  height: 20px;
+}
+
 
 #menuVue > ul > il {
   padding-left: 10px;
