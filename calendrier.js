@@ -2,16 +2,6 @@
 var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 var days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
-var img=document.getElementsByClassName("thirdLine1");
-
-function mOver(obj) {
-  obj.innerHTML = img;
-}
-
-function mOut(obj) {
-  obj.innerHTML = "blank";
-}
-
 function clear_value (oInput)
 {
     if (!('value' in oInput))
@@ -40,14 +30,26 @@ function focusFunction() {
         self.close();
     }
 }
-var object=document.getElementById("changeP1");
+function appear (index) {
+    var prefixParticipant="changeP"
+    var prefixButton="editButton"
+    for (var i=1;i<6;i++) {
+            if (document.getElementById(prefixParticipant + i)==index) {
+                document.getElementById(prefixButton + i).style="width:20px;height:20px;";
+            }
+    }
+}
 
-object.onmouseover=function(){
-    document.getElementById("editButton").style="width:20px;height:20px;";
+function hide (index) {
+    var prefixParticipant="changeP"
+    var prefixButton="editButton"
+    for (var i=1;i<6;i++) {
+            if (document.getElementById(prefixParticipant + i)==index) {
+                document.getElementById(prefixButton + i).style="width:0px;height:0px;";
+            }
+    }
 }
-object.onmouseout=function(){
-    document.getElementById("editButton").style="width:0px;height:0px;";
-}
+
 
 function imageChanging(checkBox){
     if(checkBox.classList.contains('checked')){
@@ -72,10 +74,9 @@ function edit(){
         document.getElementById("participant2").style.visibility="hidden";
         document.getElementById("participNom1").style.visibility="hidden";
         document.getElementById("cancel").style.visibility="visible";
-        document.getElementById("editButton").style="visibility:hidden"; //NE MARCHE PAS ICI
+        document.getElementById("editButton1").style="visibility:hidden"; //NE MARCHE PAS ICI
       }
-      editText.classList.toggle('clicked')
-    
+      editText.classList.toggle('clicked') 
 }
 function updating () {
     document.getElementById("update").style.visibility="visible";
@@ -92,7 +93,7 @@ function cancel() {
         document.getElementById("participant2").style.visibility="visible";
         document.getElementById("participNom1").style.visibility="visible";
         document.getElementById("cancel").style.visibility="hidden";
-        document.getElementById("editButton").style.visibility="visible";
+        document.getElementById("editButton1").style.visibility="visible";
     }
         
 }
@@ -104,7 +105,7 @@ function update() {
         document.getElementById("participant2").style.visibility="visible";
         document.getElementById("participNom1").style.visibility="visible";
         document.getElementById("update").style.visibility="hidden";
-        document.getElementById("editButton").style.visibility="visible";
+        document.getElementById("editButton1").style.visibility="visible";
     }
         
 }
@@ -118,8 +119,21 @@ document.getElementsByName("blueCheckbox").forEach(function(element){
 });
 
 
+// document.getElementsByName("hover").forEach(function(element){
+//     if(element.addEventListener){
+//         element.addEventListener("appear", appear, false);
+//     } else if(element.attachEvent){
+//         element.attachEvent("onappear", pencil);
+//     }
+// });
 
-
+// document.getElementsByName("hover").forEach(function(element){
+//     if(element.addEventListener){
+//         element.addEventListener("hide", hide, false);
+//     } else if(element.attachEvent){
+//         element.attachEvent("onappear", pencil);
+//     }
+// });
 
 fetch('https://raw.githubusercontent.com/AnthonyAbboud/UI_TD1/master/calendrier.json')
 .then(function(response){
