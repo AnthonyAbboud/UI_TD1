@@ -390,7 +390,7 @@ function Controller(model) {
         e.stopPropagation();
         var eventID = e.target.id;
         var eventClass = e.target.className;
-        var eventType = e.type;\
+        var eventType = e.type;
         if(eventID == "tableViewButton" && eventType == "click") {
             self.switchViewHandler(document.getElementById('table'));
         }
