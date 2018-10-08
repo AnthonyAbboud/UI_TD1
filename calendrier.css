@@ -1,23 +1,131 @@
-#table {
-  display: grid;
-  grid-template-columns: 216px 72px 72px 72px 72px 72px 72px 72px 72px 72px;
-  grid-template-rows: 150px 47px 57px 45px 45px 45px 45px 45px;
-  grid-gap: 0px 0px;
-  padding: 1px;
-  margin: 0;
+.blue-checkbox, .vote {
+  width: 100%;
+  height: 100%;
 }
 
-.oneDivTable {
+.date {
+  text-align: center;
+  border-top: 1px solid #d4dade;
+}
+
+.date-month {
+  font-size: 16px;
+  color: #434e57;
+  padding-top: 8px;
+  font-family: "Fira Sans","Trebuchet MS","Helvetica Neue","Arial",sans-serif;
+}
+
+.date-number {
+  color: #282F34;
+  font-size: 26px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  font-family: "Fira Sans","Trebuchet MS","Helvetica Neue","Arial",sans-serif;
+}
+
+.date-start-period {
+  padding-top: 15px;
+  font-family: "Fira Sans","Trebuchet MS","Helvetica Neue","Arial",sans-serif;
+}
+
+.date-start-period, .date-end-period{
+  color: #434e57;
+  font-size: 13px;
+  font-family: "Fira Sans","Trebuchet MS","Helvetica Neue","Arial",sans-serif;
+}
+
+.date-week {
+  color: #5d6e79;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: "Fira Sans","Trebuchet MS","Helvetica Neue","Arial",sans-serif;
+}
+
+.nameField {
+  display: none;
+  width: 40%;
+  height: 40%;
+  padding-top: 10px;
+  transform: translateX(-50px);
+  color: #8696a2;
+  font-size: 15px;
+  text-align: center;
+  font-family: "Fira Sans","Trebuchet MS","Helvetica Neue","Arial",sans-serif;
+  border-radius: 8px;
+}
+
+.oneDivCalendar {
   text-align: center;
   border: 1px solid #d4dade;
 }
 
+.oneDivTable {
+  text-align: center;
+  border-right: 1px solid #d4dade;
+  border-bottom: 1px solid #d4dade;
+}
+
+.participantIcon {
+  float: left;
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
+.participantName {
+  display: inline;
+  margin: 0 auto;
+  color: #434e57;
+  font-family: "Fira Sans","Trebuchet MS","Helvetica Neue","Arial",sans-serif;
+}
+
+.participantNameColumnItem {
+  border-left: 1px solid #d4dade;
+}
+
+.participantRow1, .participantRow2, .participantRow3, .participantRow4, .participantRow5 {
+  background-color: #fcede9;
+}
+
+.pencil-edit {
+  visibility: hidden;
+  width: 10%;
+  height: 50%;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  color: blue;
+}
+
+.popup {
+  height: 160px;
+  width: 130px;
+  background-color: white;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  transform: translateY(-220px);
+  border: 1px solid #d4dade;
+}
+
+.viewSelectionMenu {
+  padding-left: 300px;
+}
+
+#blank-space {
+  border-top: 1px solid #d4dade;
+  border-left: 1px solid #d4dade;
+}
+
+#blue-tick {
+  padding-top: 16px;
+  width: 40%;
+  height: 50%;
+}
 
 #calendar {
   display: none;
   grid-template-columns: 762px;
   grid-template-rows: 50px 69px 48px 
-    32px 32px 32px 32px 32px 32px 32px 32px 32px 32px
+    48px 32px 32px 32px 32px 32px 32px 32px 32px 32px
     32px 32px 32px 32px 32px 32px 32px 32px 32px 32px
     32px 32px 32px 32px 32px 32px 32px 32px 32px 32px
     32px 32px 32px 32px 32px 32px 32px 32px 32px 32px
@@ -27,50 +135,99 @@
   margin: 0;
 }
 
-.oneDivCalendar {
+#calendarFieldNewParticipant {
+  border-radius: 8px;
+  padding: 8px;
+}
+
+#calendarNewParticipantName {
+  background-color: #8FC8E6;
+}
+
+#fieldNewParticipant {
+  padding-bottom: 4px;
+  padding-top: 20px;
+  font-family: "Fira Sans","Trebuchet MS","Helvetica Neue","Arial",sans-serif;
+  color: #8696a2;
+  font-size: 15px;
   text-align: center;
-  border: 1px solid #d4dade;
+  border-radius: 8px;
+  border: none;
 }
 
-#totalPerPeriodText {
-  margin: 0;
-}
-
-.blue-checkbox, .vote {
-  width: 100%;
-  height: 100%;
-}
-
-.participantRow1, .participantRow2, .participantRow3, .participantRow4, .participantRow5 {
-  background-color: #fcede9;
+#iconNewParticipant {
+  padding-top: 10px;
+  padding-right: 8px;
 }
 
 #label-all-day, #label-hour {
   float: left;
 }
 
-.participantIcon {
+#newParticipantName {
+  background-color: #8FC8E6;
+  border-left: 1px solid #d4dade;
+}
+
+#popup-name {
+  color: #434e57;
+  font-family: "Fira Sans","Trebuchet MS","Helvetica Neue","Arial",sans-serif;
+}
+
+#popup-top-left {
+  display: inline-grid;
   float: left;
+  width: 50%;
+  padding-top: 5px;
 }
 
-.participantName {
-  display: inline;
-  margin: 0 auto;
+#popup-top-right {
+  display: inline-grid;
+  float: right;
+  width: 50%;
+  padding-top: 20px;
+  text-align: left;
 }
 
-.pencil-edit {
-  visibility: hidden;
-  width: 10%;
-  height: 50%;
-}
-
-.popup {
-  height: 160px;
-  width: 130px;
-  background-color: white;
+#popup-bottom {
+  display: block;
   position: absolute;
-  z-index: 1;
-  text-align: center;
-  transform: translateY(-220px);
-  border: 1px solid #d4dade;
+  bottom: 0px;
+  border-top: 1px solid #d4dade;;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  text-align: left;
+  padding-left: 10px;
+}
+
+#table {
+  display: grid;
+  grid-template-columns: 216px 72px 72px 72px 72px 72px 72px 72px 72px 72px;
+  grid-template-rows: 150px 47px 57px 45px 45px 45px 45px 45px;
+  grid-gap: 0px 0px;
+  padding: 1px;
+  margin: 0;
+}
+
+#totalParticipants {
+  color: #8696a2;
+  font-weight: 500;
+  padding-left: 16px;
+  font-weight: bold;
+  font-family: "Fira Sans","Trebuchet MS","Helvetica Neue","Arial",sans-serif;
+  font-style: normal;
+  text-align: left;
+  padding-top: 12px;
+  border-left: 1px solid #d4dade;
+}
+
+#totalPerPeriodText {
+  float: right;
+  margin: 0;
+  color: #3798D4;
+  font-weight: bold;
+  font-family: "Fira Sans","Trebuchet MS","Helvetica Neue","Arial",sans-serif;
+  padding-right: 18px;
+  padding-top: 16px;
 }

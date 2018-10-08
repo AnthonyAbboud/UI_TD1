@@ -1,4 +1,12 @@
-/* Data Structures */
+/* 
+
+
+
+Data Structures 
+
+
+
+*/
 var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 var maxDaysPerMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 var days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
@@ -7,7 +15,13 @@ var hours = ["12:00 AM", "1:00 AM", "2:00 AM", "3:00 AM", "4:00 AM", "5:00 AM", 
             "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM",
             "7:00 PM", "8:00 PM", "9:00 PM", "10:00 PM", "11:00 PM"];
 
-/* Model */
+/* 
+
+
+Model:  Processing Data
+
+
+*/
 function Model() {
 
     this.loadData = function() {
@@ -102,7 +116,14 @@ function Model() {
     }
 }
 
-/* Vues */
+/* 
+
+
+Views: Displaying Output 
+
+
+*/
+/* Table View */
 function TableView(controller) {
     this.controller = controller;
 
@@ -134,30 +155,36 @@ function TableView(controller) {
                     /* Date grid items */
                     else if(i == 0) {
                         oneDiv.id = ("date" + (j));
+                        oneDiv.className += " date";
 
                         /* Month */
                         var divDateMonth = document.createElement('div');
                         divDateMonth.id = ("date-month" + (j));
+                        divDateMonth.className = "date-month";
                         divDateMonth.innerHTML = controller.getDateInfo("month", arrayDates, j-1, result.Calendrier[j-1][1]);
 
                         /* Day Number */
                         var divDateNumber = document.createElement('div');
                         divDateNumber.id = ("date-number" + (j));
+                        divDateNumber.className = "date-number";
                         divDateNumber.innerHTML = controller.getDateInfo("date", arrayDates, j-1, result.Calendrier[j-1][1]);
 
                         /* Day Name */
                         var divDateWeek = document.createElement('div');
                         divDateWeek.id = ("date-week" + (j));
+                        divDateWeek.className = "date-week";
                         divDateWeek.innerHTML = controller.getDateInfo("day", arrayDates, j-1, result.Calendrier[j-1][1]);
 
                         /* Start Time Period */
                         var divStartPeriod = document.createElement('div');
                         divStartPeriod.id = ("date-start-period" + (j));
+                        divStartPeriod.className = "date-start-period";
                         divStartPeriod.innerHTML = controller.getDateInfo("start-hours", arrayDates, j-1, result.Calendrier[j-1][1]);
                         
                         /* End Time Period */              
                         var divEndPeriod = document.createElement('div');
                         divEndPeriod.id = ("date-end-period" + (j));
+                        divEndPeriod.className = "date-end-period";
                         divEndPeriod.innerHTML = controller.getDateInfo("end-hours", arrayDates, j-1, result.Calendrier[j-1][1]);
 
                         oneDiv.appendChild(divDateMonth);
@@ -271,23 +298,31 @@ function TableView(controller) {
                             var divPopUpTopLeft = document.createElement('div');
                             divPopUpTopLeft.id = "popup-top-left"
                             var divPopUpMonth = document.createElement('div');
+                            divPopUpMonth.className = "date-month";
                             divPopUpMonth.innerHTML = controller.getDateInfo("month", arrayDates, j-1, result.Calendrier[j-1][1]);
                             var divPopUpDay = document.createElement('div');
+                            divPopUpDay.className = "date-number";
                             divPopUpDay.innerHTML = controller.getDateInfo("date", arrayDates, j-1, result.Calendrier[j-1][1]);
                             var divPopUpWeek = document.createElement('div');
+                            divPopUpWeek.className = "date-week";
                             divPopUpWeek.innerHTML = controller.getDateInfo("day", arrayDates, j-1, result.Calendrier[j-1][1]);
 
                             var divPopUpTopRight = document.createElement('div');
                             divPopUpTopRight.id = "popup-top-right";
                             var divPopUpStartPeriod = document.createElement('div');
+                            divPopUpStartPeriod.className = "date-start-period";
                             divPopUpStartPeriod.innerHTML = controller.getDateInfo("start-hours", arrayDates, j-1, result.Calendrier[j-1][1]);
                             var divPopUpEndPeriod = document.createElement('div');
+                            divPopUpEndPeriod.className = "date-end-period";
                             divPopUpEndPeriod.innerHTML = controller.getDateInfo("end-hours", arrayDates, j-1, result.Calendrier[j-1][1]);
 
                             var divPopUpBottom = document.createElement('div');
+                            divPopUpBottom.id = "popup-bottom";
                             var divName = document.createElement('div');
+                            divName.id = "popup-name";
                             divName.innerHTML = controller.getParticipantName(result.Participants, i-2);
                             var votedYes = document.createElement('div');
+                            votedYes.id = "popup-name";
                             votedYes.innerHTML = "Voted \"Yes\"";
 
                             divPopUpTopLeft.appendChild(divPopUpMonth);
@@ -317,6 +352,7 @@ function TableView(controller) {
     );
 }
 
+/* Calendar View */
 function CalendarView(controller) {
     this.controller = controller;
     
@@ -338,7 +374,7 @@ function CalendarView(controller) {
 
                 /* Different content according to grid item location */
                 if(i == 0) {
-                    oneDiv.id = "newParticipantName";
+                    oneDiv.id = "calendarNewParticipantName";
 
                     var divIcon = document.createElement('img');
                     divIcon.id = "calendarIconNewParticipant";
@@ -380,12 +416,24 @@ function CalendarView(controller) {
     );
 }
 
-/* Controller */
+/* 
+
+
+Controller: Receiving User Input and Handling Events
+
+
+*/
 function Controller(model) {
     var self = this;
     this.model = model;
 
-    /* Event listener interface */
+    /* 
+
+
+    Event listener interface 
+
+
+    */
     this.handleEvent = function(e) {
         e.stopPropagation();
         var eventID = e.target.id;
@@ -414,6 +462,13 @@ function Controller(model) {
         }
     }
 
+    /*
+
+
+    Methods
+
+
+    */
     this.getModelInfo = function() {
         return self.model.jsonData;
     }
@@ -450,7 +505,13 @@ function Controller(model) {
 
     }
 
-    /* Handlers */
+    /* 
+
+
+    Event Handlers 
+
+
+    */
     this.switchViewHandler = function(view) {
         if(view.id == "table") {
             document.getElementById('table').style.display = "grid";
@@ -493,12 +554,13 @@ function Controller(model) {
 
     this.nameFieldHandler = function(nameField, participantName) {
         document.getElementById(nameField).style.visibility = "visible";
+        document.getElementById(nameField).style.display = "inline";
         document.getElementById(participantName).style.visibility = "hidden";
 
     }
 }
 
-/* Fonction principale */
+/* Main Function */
 function main() {
     var model = new Model();
     var controller = new Controller(model);
